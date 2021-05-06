@@ -9,6 +9,10 @@ class Thermostat {
     this.powerSavingMode = powerSavingMode
   };
 
+  getCurrentTemperature() {
+    return this.temperature
+  }
+
   increaseTemp() {
     if(this.temperature < this.maximumTemperature) {
       this.temperature += 1
@@ -34,6 +38,10 @@ class Thermostat {
     this.powerSavingMode = true
     this._setMaximumTemperature()
   };
+
+  getPowerSavingMode() {
+    return this.getPowerSavingMode
+  }
 
   energyUsage() {
     if(this.temperature < 18) {
