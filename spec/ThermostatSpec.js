@@ -41,6 +41,12 @@ describe("Thermostat", function() {
       // add test / error for minimum temperature
     });
 
+    it("Can reset the temperature to 20", function() {
+      thermostat.increaseTemp()
+      thermostat.reset()
+      expect(thermostat.temperature).toEqual(20)
+    });
+
   });
 
   describe("Power saving mode", function() {
@@ -56,13 +62,41 @@ describe("Thermostat", function() {
       expect(thermostat.powerSavingMode).toEqual(true)
     });
 
-    it("Power saving mode sets max temp to 25", function() {
+    it("When on - power saving mode sets max temp to 25", function() {
       let i;
       for(i = 0; i <= 10; i++) {
         thermostat.increaseTemp(); 
       };
       expect(thermostat.temperature).toEqual(25)
     });
+
+    it("When power saving mode off - sets max temp to 32", function() {
+      thermostat.switchOffPowerSave()
+      let i;
+      for(i = 0; i <= 15; i++) {
+        thermostat.increaseTemp(); 
+      };
+      expect(thermostat.temperature).toEqual(32)
+    });
+  });
+
+  describe("Energy usage", function() {
+
+    it("Returns 'low usage' when temperature less than 18", function() {
+      let thermostatLow = new Thermostat(17, true, 25)
+      expect(thermostatLow.energyUsage()).toEqual("low-usage") 
+    });
+
+    it("Returns 'medium usage' when temperature <= 25", function() {
+      let thermostatMid = new Thermostat(25, true, 25)
+      expect(thermostatMid.energyUsage()).toEqual("medium-usage") 
+    });
+
+    it("Returns 'high usage' when temperature more than 25", function() {
+      let thermostatHigh = new Thermostat(28, true, 25)
+      expect(thermostatHigh.energyUsage()).toEqual("high-usage") 
+    });
+
   });
 
 });
