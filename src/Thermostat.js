@@ -11,7 +11,7 @@ class Thermostat {
 
   getCurrentTemperature() {
     return this.temperature
-  }
+  };
 
   increaseTemp() {
     if(this.temperature < this.maximumTemperature) {
@@ -27,7 +27,7 @@ class Thermostat {
 
   reset() {
     this.temperature = 20
-  }
+  };
 
   switchOffPowerSave() {
     this.powerSavingMode = false
@@ -41,7 +41,7 @@ class Thermostat {
 
   getPowerSavingMode() {
     return this.getPowerSavingMode
-  }
+  };
 
   energyUsage() {
     if(this.temperature < 18) {
@@ -50,8 +50,8 @@ class Thermostat {
         return "medium-usage"
     } else {
       return "high-usage"
-    }
-  }
+    };
+  };
 
   _setMaximumTemperature() {
     if(this.powerSavingMode === true) {
