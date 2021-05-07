@@ -8,19 +8,28 @@
   <title>Thermostat</title>
 </head>
 <body>
+  <div class="background-image"></div>
+  <div class="container">
+    <div class="inner-container">
+      <h1 id="getCurrentTemperature">Temperature</h1>
+      <button type = "button" id="increaseTemp">+</button>
+      <button type = "button" id="decreaseTemp">-</button>
+      <button type = "button" id="reset">Reset</button>
+      <br>
+      Power saving mode is <span id="power-saving-status">on</span>
+      <br>
+      <button type = "button" id="switchOnPowerSave">Switch on power saving mode</button>
+      <br>
+      <button type = "button" id="switchOffPowerSave">Switch off power saving mode</button>
+      <br>
+      <form>
+        <input type="text" id="getCityText" placeholder="Search for a city"></input>
+        <input type="button" id="getCity" value="Submit"></button>
+      </form>
+      <div id="cityTemp"></div>
+    </div>
+  </div>
+</body>
   <script src="src/Thermostat.js"></script>
   <script src="interface.js"></script>
-  <h1 id="getCurrentTemperature">Temperature</h1>
-  Power saving mode is <span id="power-saving-status">on</span>
-  <button type = "button" id="increaseTemp">+</button>
-  <button type = "button" id="decreaseTemp">-</button>
-  <button type = "button" id="reset">Reset</button>
-  <button type = "button" id="switchOnPowerSave">Switch on power saving mode</button>
-  <button type = "button" id="switchOffPowerSave">Switch off power saving mode</button>
-  <form>
-    <input type="text" id="getCityText" placeholder="Search for a city"></input>
-    <input type="button" id="getCity" value="Submit"></button>
-  </form>
-  <div id="cityTemp"></div>
-</body>
 </html>
