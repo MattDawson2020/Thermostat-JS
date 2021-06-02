@@ -10,7 +10,7 @@ The learning objectives for this week were:
 
 
 
-# Weekend Challange
+**Weekend Challange**
 I decided to skip this weeks' weekend challenge as it was a Ruby coding challenge that was equivalent to a level 3-4 CodeWars Kata.
 The idea was that you would then later translate this into JavaScript, but I decided it was a better use of my time to consolidate my previous weeks learning.
 This involved:
